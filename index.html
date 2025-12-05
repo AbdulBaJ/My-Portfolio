@@ -178,6 +178,44 @@
     .contact-pill:hover{ transform:translateY(-4px); box-shadow:0 12px 30px rgba(30,58,138,0.18); }
     .contact-pill .icon{ width:22px; height:22px; display:inline-block; }
     .contact-pill .label{ font-weight:700; color:var(--soft); }
+/* --- ADD RESPONSIVE PROJECTS CSS BELOW --- */
+
+/* Projects responsive layout (use this instead of inline styles) */
+.projects {
+  margin-top: 16px;
+  width: 100%;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Make project images fill the card without left/right black bars */
+.projects .card > div img,
+.projects .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+}
+
+/* optional: slightly reduce card image height on small screens */
+@media (max-width: 600px) {
+  .projects .card > div { height: 260px; }
+}
 
   </style>
 </head>
@@ -341,7 +379,8 @@
     <section id="projects" class="page" aria-label="Projects">
       <div class="container" style="flex-direction:column; align-items:flex-start;">
         <h2>Projects</h2>
-        <div class="projects" style="margin-top:16px; width:100%; display:grid; grid-template-columns: repeat(3, 1fr); gap:20px;">
+       <div class="projects">
+
 
           <!-- 1: PPE Safety Equipment Verification -->
           <div class="card">
@@ -488,4 +527,5 @@
   </script>
 </body>
 </html>
+
 
